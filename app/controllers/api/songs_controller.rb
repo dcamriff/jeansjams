@@ -1,8 +1,9 @@
 class Api::SongsController < ApplicationController
 
     def index
-        @songs = Artist.find(params[:artist_id]).songs
-        render json: @songs
+        # @songs = Artist.find(params[:artist_id]).songs
+        @song = Song.where(artist_id: params[:artist_id])
+        render json: @song
     end
 
     def show
