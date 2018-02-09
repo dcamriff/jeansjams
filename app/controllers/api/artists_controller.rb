@@ -10,7 +10,7 @@ class Api::ArtistsController < ApplicationController
     end
 
     def create
-        @artist = Artist.create(artist_params)
+        @artist = Artist.create!(artist_params)
         render json: @artist
     end
 
